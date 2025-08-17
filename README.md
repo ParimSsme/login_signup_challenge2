@@ -1,16 +1,36 @@
-# login_signup_challenge2
+# 🔐 Flutter Authentication UI (MVVM + Provider + flutter_animate)
 
-A new Flutter project.
+A modern **Authentication UI** built with **Flutter** following the **MVVM architecture**.  
+It includes smooth animations, gradient backgrounds, and reusable widgets for **Login / Signup forms**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📂 Project Structure
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+lib/
+├── core/
+│   └── widgets/
+│       └── social_icon.dart        # Reusable social media button
+│
+├── features/
+│   └── authentication/
+│       ├── model/
+│       │   ├── user_model.dart
+│       │   └── auth_credentials.dart
+│       │
+│       ├── service/
+│       │   └── auth_service.dart   # Business logic (Firebase/API)
+│       │
+│       ├── view_model/
+│       │   └── auth_view_model.dart # Holds UI state (login/signup)
+│       │
+│       └── view/
+│           ├── authentication_screen.dart # Main screen
+│           └── widgets/
+│               ├── sign_in_form.dart
+│               ├── sign_up_form.dart
+│               ├── auth_buttons.dart
+│               └── social_icon.dart
+│
+└── main.dart
