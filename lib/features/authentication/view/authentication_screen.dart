@@ -65,7 +65,7 @@ class AuthenticationScreen extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       /// 20: bottom button space, 55: top logo & text
-                      height: (size.height * .92) - 20 - 75,
+                      height: size.height - 20 - 55 - 140,
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 600),
                         transitionBuilder: (child, animation) {

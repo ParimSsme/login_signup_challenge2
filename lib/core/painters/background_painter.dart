@@ -13,7 +13,7 @@ class BackgroundPainter extends CustomPainter {
     path.lineTo(0, topCircleHeight);
     path.quadraticBezierTo(topCircleHeight, topCircleHeight, topCircleWidth, 0);
 
-    double bottomCircleHeight = size.height  * .92;
+    double bottomCircleHeight = size.height - 100;
     double leftSpace = size.width * .08;
     path.moveTo(size.width, bottomCircleHeight);
     path.quadraticBezierTo(
