@@ -15,8 +15,10 @@ class SignUpForm extends StatelessWidget {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
 
+    final topPadding = MediaQuery.sizeOf(context).height * .18 + 58;
+
     return CustomPaint(
-      painter: AuthFormPainter(201),
+      painter: AuthFormPainter(topPadding),
       child: Padding(
         padding: const EdgeInsets.only(left: 50, right: 20),
         child: Column(

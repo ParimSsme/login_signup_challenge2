@@ -8,18 +8,18 @@ class BackgroundPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     Path path = Path();
-    double topWidth = size.width * .8;
-    double topControlPoint = size.width * .6;
-    path.lineTo(0, topControlPoint);
-    path.quadraticBezierTo(topControlPoint, topControlPoint, topWidth, 0);
+    double topCircleWidth = size.width * .9;
+    double topCircleHeight = size.height * .28;
+    path.lineTo(0, topCircleHeight);
+    path.quadraticBezierTo(topCircleHeight, topCircleHeight, topCircleWidth, 0);
 
-    double bottomHeight = size.height - size.width * .6;
-    double bottomCtrlPoint = size.width * .2;
-    path.moveTo(size.width, bottomHeight);
+    double bottomCircleHeight = size.height  * .92;
+    double leftSpace = size.width * .08;
+    path.moveTo(size.width, bottomCircleHeight);
     path.quadraticBezierTo(
-      size.width * .4,
-      bottomHeight,
-      bottomCtrlPoint,
+      size.width * .23,
+      bottomCircleHeight,
+      leftSpace,
       size.height,
     );
     path.lineTo(size.width, size.height);

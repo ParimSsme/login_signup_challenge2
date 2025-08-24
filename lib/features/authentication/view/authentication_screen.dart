@@ -28,6 +28,7 @@ class AuthenticationScreen extends StatelessWidget {
           painter: BackgroundPainter(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             spacing: 50,
             children: [
               Padding(
@@ -54,7 +55,7 @@ class AuthenticationScreen extends StatelessWidget {
                 ),
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 10,
                 children: [
                   SizedBox(
@@ -63,7 +64,8 @@ class AuthenticationScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: SizedBox(
-                      height: size.height * .7,
+                      /// 20: bottom button space, 55: top logo & text
+                      height: (size.height * .92) - 20 - 75,
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 600),
                         transitionBuilder: (child, animation) {

@@ -20,8 +20,8 @@ class AuthFormPainter extends CustomPainter {
       0,
       size.width,
       size.height - 20,
-      topLeft: const Radius.circular(30),
-      bottomLeft: const Radius.circular(30),
+      topLeft: const Radius.circular(25),
+      bottomLeft: const Radius.circular(25),
     );
     path.addRRect(rRect);
 

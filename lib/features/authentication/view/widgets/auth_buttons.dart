@@ -11,57 +11,61 @@ class AuthButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<AuthViewModel>();
+    final topPadding = MediaQuery.sizeOf(context).height * .18;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 10,
-      children: [
-        AppTextButton(
-          text: "Login",
-          backgroundColor:
-              vm.isSignup ? AppColors.secondary : AppColors.primary,
-          onPressed: () => vm.setIsSignup(false),
-          elevation: 0,
-          textColor: Colors.white,
-          borderRadius: BorderRadius.only(
+    return Padding(
+      padding: EdgeInsets.only(top: topPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 10,
+        children: [
+          AppTextButton(
+            text: "Login",
+            backgroundColor:
+                vm.isSignup ? AppColors.secondary : AppColors.primary,
+            onPressed: () => vm.setIsSignup(false),
+            elevation: 0,
+            textColor: Colors.white,
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+            ),
+          ),
+          AppTextButton(
+            text: "Sign up",
+            backgroundColor:
+                vm.isSignup ? AppColors.primary : AppColors.secondary,
+            onPressed: () => vm.setIsSignup(true),
+            elevation: 0,
+            textColor: Colors.white,
+            borderRadius: BorderRadius.only(
               topRight: Radius.circular(20),
               bottomRight: Radius.circular(20),
+            ),
           ),
-        ),
-        AppTextButton(
-          text: "Sign up",
-          backgroundColor:
-              vm.isSignup ? AppColors.primary : AppColors.secondary,
-          onPressed: () => vm.setIsSignup(true),
-          elevation: 0,
-          textColor: Colors.white,
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+          SizedBox(
+            height: 30,
           ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Column(
-          spacing: 25,
-          children: [
-            AppCircleImageButton(
-              imagePath: "assets/images/facebook.png",
-              onPressed: () {},
-            ),
-            AppCircleImageButton(
-              imagePath: "assets/images/twitter.png",
-              onPressed: () {},
-            ),
-            AppCircleImageButton(
-              imagePath: "assets/images/google.png",
-              onPressed: () {},
-            ),
-          ],
-        )
-      ],
+          Column(
+            spacing: 25,
+            children: [
+              AppCircleImageButton(
+                imagePath: "assets/images/facebook.png",
+                onPressed: () {},
+              ),
+              AppCircleImageButton(
+                imagePath: "assets/images/twitter.png",
+                onPressed: () {},
+              ),
+              AppCircleImageButton(
+                imagePath: "assets/images/google.png",
+                onPressed: () {},
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
